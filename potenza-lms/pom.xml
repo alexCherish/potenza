@@ -7,9 +7,9 @@
   <description>博天在线学习系统</description>
   
   <modules>
-  	<module>../lms-core-entity</module>
-  	<module>../lms-core-service</module>
-  	<module>../lms-core-service-api</module>
-  	<module>../lms-sys-ui</module>
+  	<module>lms-core-entity</module>
+  	<module>lms-core-service</module>
+  	<module>lms-core-service-api</module>
+  	<module>lms-sys-ui</module>
   </modules>
 </project>
