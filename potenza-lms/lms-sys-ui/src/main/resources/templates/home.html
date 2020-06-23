@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="common::common_head_one" />
+<title>Nifty - 布局1</title>
+<th:block th:replace="common::common_head_basecss" />
+</head>
+
+<body>
+	<th:block th:replace="common::common_container_header" />
+	<!--NAVBAR-->
+	<header th:replace="common::common_body_navbar"></header>
+	<!--END NAVBAR-->
+	<div class="boxed">
+		<!--CONTENT CONTAINER-->
+		<!--===================================================-->
+		<div id="content-container">
+			<div id="page-head">
+
+				<div class="pad-all text-center">
+					<h3>Welcome back to the Dashboard.</h3>
+					<p1>Scroll down to see quick links and overviews of your
+					Server, To do list, Order status or get some Help using Nifty.
+					</p1>
+				</div>
+			</div>
+
+			<!--Page content-->
+			<!--===================================================-->
+			<div id="page-content"></div>
+		</div>
+		<!--===================================================-->
+		<!--END CONTENT CONTAINER-->
+
+		<!--ASIDE-->
+		<aside th:replace="common::common_body_aside"></aside>
+		<!--END ASIDE-->
+
+		<!--MAIN NAVIGATION-->
+		<nav id="mainnav-container" th:replace="common::common_body_mainnav">
+		</nav>
+		<!--END MAIN NAVIGATION-->
+	</div>
+	<!-- FOOTER -->
+	<!--===================================================-->
+	<footer id="footer" th:replace="common::common_body_footer"> </footer>
+	<!--===================================================-->
+	<!-- END FOOTER -->
+
+	<!-- SCROLL PAGE BUTTON -->
+	<!--===================================================-->
+	<button th:replace="common::common_body_topbutton"></button>
+	<!--===================================================-->
+	<th:block th:replace="common::common_container_end" />
+	<th:block th:replace="common::common_head_basejs" />
+</body>
+
+</html>

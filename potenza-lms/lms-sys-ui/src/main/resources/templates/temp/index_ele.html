@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="common::common_head_one" />
+<title>教务中心-学生管理</title>
+<th:block th:replace="common::common_head_basecss" />
+<!--Chosen [ OPTIONAL ]-->
+<link href="/plugins/chosen/chosen.min.css" rel="stylesheet">
+<!--Bootstrap Datepicker [ OPTIONAL ]-->
+<link href="/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css"
+	rel="stylesheet">
+</head>
+
+<body>
+	<!--NAVBAR-->
+	<th:block th:replace="common::common_container_header" />
+	<!--NAVBAR-->
+	<header th:replace="common::common_body_navbar"></header>
+	<!--END NAVBAR-->
+	<div class="boxed" id="app">
+		<!--CONTENT CONTAINER-->
+		<!--===================================================-->
+		<div id="content-container">
+			<div id="page-head">
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="demo-pli-home"></i></a></li>
+					<li><a href="#">教务中心</a></li>
+					<li class="active">学生管理</li>
+				</ol>
+			</div>
+			<!--Page content-->
+			<!--===================================================-->
+			<div id="page-content" style="padding-top: 2px;">
+				<div class="row">
+					<div class="panel">
+						<!--Panel heading-->
+						<div class="panel-heading">
+							<div class="panel-control">
+								<button class="btn btn-default" data-panel="minmax"
+									data-target="#panel-collapse-7017" data-toggle="collapse"
+									aria-expanded="true">
+									<i class="demo-psi-chevron-up"></i>
+								</button>
+							</div>
+							<h3 class="panel-title">搜索条件</h3>
+						</div>
+						<!--Panel body-->
+						<div class="collapse in" id="panel-collapse-7017"
+							aria-expanded="true" style="">
+							<div class="panel-body">
+								<!-- Inline Form  -->
+								<!--===================================================-->
+								<div class="row panel">
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+								</div>
+								<!--===================================================-->
+								<div class="row panel">
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+								</div>
+								<!--===================================================-->
+								<div class="row panel">
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+									<div class="col-sm-3">
+										<el-input placeholder="请输入内容" v-model="input1"> <template
+											slot="prepend">姓名</template> </el-input>
+									</div>
+								</div>
+								<button class="btn btn-primary pull-right" type="submit">search</button>
+								<!--===================================================-->
+								<!-- End Inline Form  -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel"  id="test">
+						<!--Data Table-->
+						<!--===================================================-->
+						<div class="panel-body">
+							<div class="form-inline">
+								<div class="row">
+									<div class="col-sm-6 table-toolbar-left">
+										<button id="demo-btn-addrow" class="btn btn-purple">
+											<i class="demo-pli-add"></i> Add
+										</button>
+										<div class="btn-group">
+											<button class="btn btn-default">
+												<i class="demo-pli-exclamation"></i>
+											</button>
+											<button class="btn btn-default">
+												<i class="demo-pli-recycling"></i>
+											</button>
+										</div>
+									</div>
+									<div class="col-sm-6 table-toolbar-right">
+										<div class="btn-group">
+											<button class="btn btn-default">
+												<i class="demo-pli-printer"></i>
+											</button>
+											<div class="panel-control">
+												<button class="btn btn-default" data-panel="fullscreen">
+													<i class="icon-max demo-psi-maximize-3"></i> <i
+														class="icon-min demo-psi-minimize-3"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<el-table :data="tableData" style="width: 100%"> <el-table-column
+								prop="date" label="姓名" width="180"> </el-table-column> <el-table-column
+								label="日期" width="180"> <template
+								slot-scope="scope"> <i class="el-icon-time"></i> <span
+								style="margin-left: 10px">{{ scope.row.date }}</span> </template> </el-table-column> <el-table-column
+								label="姓名" width="180"> <template
+								slot-scope="scope"> <el-popover trigger="hover"
+								placement="top">
+							<p>姓名: {{ scope.row.name }}</p>
+							<p>住址: {{ scope.row.address }}</p>
+							<div slot="reference" class="name-wrapper">
+								<el-tag size="medium">{{ scope.row.name }}</el-tag>
+							</div>
+							</el-popover> </template> </el-table-column> <el-table-column label="操作"> <template
+								slot-scope="scope"> <el-button size="mini"
+								@click="handleEdit(scope.$index, scope.row)">编辑</el-button> <el-button
+								size="mini" type="danger"
+								@click="handleDelete(scope.$index, scope.row)">删除</el-button> </template> </el-table-column>
+							</el-table>
+						</div>
+						<div class="panel-footer table-toolbar-right">
+							<el-pagination @size-change="handleSizeChange"
+								@current-change="handleCurrentChange"
+								:current-page="currentPage4" :page-sizes="[100, 200, 300, 400]"
+								:page-size="100"
+								layout="total, sizes, prev, pager, next, jumper" :total="400">
+							</el-pagination>
+						</div>
+						<!--End Data Table-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===================================================-->
+		<aside th:replace="common::common_body_aside"></aside>
+		<nav id="mainnav-container" th:replace="common::common_body_mainnav">
+		</nav>
+		<!--END MAIN NAVIGATION-->
+	</div>
+	<footer id="footer" th:replace="common::common_body_footer"> </footer>
+	<button th:replace="common::common_body_topbutton"></button>
+	<th:block th:replace="common::common_container_end" />
+	<th:block th:replace="common::common_head_basejs" />
+
+	<!--Chosen [ OPTIONAL ]-->
+	<script src="/plugins/chosen/chosen.jquery.min.js"></script>
+	<!--Bootstrap Datepicker [ OPTIONAL ]-->
+	<script src="/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script>
+		var app = new Vue({
+			el:"#app",
+			 data() {
+			      return {
+			        tableData: [{
+			          date: '2016-05-02',
+			          name: '王小虎',
+			          address: '上海市普陀区金沙江路 1518 弄'
+			        }, {
+			          date: '2016-05-04',
+			          name: '王小虎',
+			          address: '上海市普陀区金沙江路 1517 弄'
+			        }, {
+			          date: '2016-05-01',
+			          name: '王小虎',
+			          address: '上海市普陀区金沙江路 1519 弄'
+			        }, {
+			          date: '2016-05-03',
+			          name: '王小虎',
+			          address: '上海市普陀区金沙江路 1516 弄'
+			        }],
+			        options: [{
+			            value: '选项1',
+			            label: '黄金糕'
+			          }, {
+			            value: '选项2',
+			            label: '双皮奶'
+			          }, {
+			            value: '选项3',
+			            label: '蚵仔煎'
+			          }, {
+			            value: '选项4',
+			            label: '龙须面'
+			          }, {
+			            value: '选项5',
+			            label: '北京烤鸭'
+			          }],
+			          value:"",
+			          value1:[]
+			      }
+			    },
+			    methods: {
+			      handleEdit(index, row) {
+			        console.log(index, row);
+			      },
+			      handleDelete(index, row) {
+			        console.log(index, row);
+			      }
+			    }
+		});
+		
+		// CHOSEN
+		$('#demo-chosen-select').chosen();
+		$('#demo-cs-multiselect').chosen({
+			width : '100%'
+		});
+		$('#demo-dp-range .input-daterange').datepicker({
+			format : "MM dd, yyyy",
+			todayBtn : "linked",
+			autoclose : true,
+			todayHighlight : true
+		});
+		
+	</script>
+
+</body>
+
+</html>

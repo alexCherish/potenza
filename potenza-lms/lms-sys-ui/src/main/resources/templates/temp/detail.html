@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="common::common_head_one" />
+<title>Nifty - 布局1</title>
+<th:block th:replace="common::common_head_basecss" />
+</head>
+
+<body>
+	<th:block th:replace="common::common_container_header" />
+	<!--NAVBAR-->
+	<header th:replace="common::common_body_navbar"></header>
+	<!--END NAVBAR-->
+	<div class="boxed">
+		<!--CONTENT CONTAINER-->
+		<!--===================================================-->
+		<div id="content-container">
+			<div id="page-content">
+				<div class="panel">
+					<div class="panel-body">
+						<div class="fixed-fluid">
+							<div class="fixed-sm-250 pull-sm-right fixed-left-border">
+								<!-- Tips Widget -->
+								<!--===================================================-->
+								<h4>Useful tips</h4>
+								<p class="text-sm">Lorem ipsum dolor sit amet, consectetuer
+									adipiscing elit.</p>
+								<div class="list-group bg-trans">
+									<a class="list-group-item list-item-sm" href="#"><span
+										class="badge badge-purple badge-icon badge-fw pull-left"></span>
+										Lorem ipsum</a> <a class="list-group-item list-item-sm" href="#"><span
+										class="badge badge-info badge-icon badge-fw pull-left"></span>
+										Consectetuer adipiscing</a> <a
+										class="list-group-item list-item-sm" href="#"><span
+										class="badge badge-pink badge-icon badge-fw pull-left"></span>
+										Sed diam nonummy</a> <a class="list-group-item list-item-sm"
+										href="#"><span
+										class="badge badge-success badge-icon badge-fw pull-left"></span>
+										Euismod tincidunt</a>
+								</div>
+								<!--===================================================-->
+
+								<hr class="new-section-md bord-no">
+
+								<!-- Contact us widget -->
+								<!--===================================================-->
+								<h4>Can't find the answer?</h4>
+								<p class="text-sm">Lorem ipsum dolor sit amet, consectetuer
+									adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+								<div class="pad-top">
+									<a href="#" class="btn btn-primary">Contact us</a>
+								</div>
+								<!--===================================================-->
+							</div>
+
+							<div class="fluid faq-accordion">
+								<!-- ACCOUNT -->
+								<!--===================================================-->
+								<h5 class="pad-btm bord-btm">
+									<i class="demo-pli-male-female icon-fw v-middle"></i> Account
+								</h5>
+								<div class="panel">
+									<div class="row col-sm-6">
+										<p class="text-left"><span class="text-primary">姓名：</span>张顺</p>
+										<p class="text-left"><span class="text-primary">姓名：</span>张顺</p>
+									</div>
+									<div class="row col-sm-6">
+										<p class="text-left"><span class="text-dark">姓名：</span>张顺</p>
+										<p class="text-left"><span class="text-dark">姓名：</span>张顺</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===================================================-->
+		<!--END CONTENT CONTAINER-->
+
+		<!--ASIDE-->
+		<aside th:replace="common::common_body_aside"></aside>
+		<!--END ASIDE-->
+
+		<!--MAIN NAVIGATION-->
+		<nav id="mainnav-container" th:replace="common::common_body_mainnav">
+		</nav>
+		<!--END MAIN NAVIGATION-->
+	</div>
+	<!-- FOOTER -->
+	<!--===================================================-->
+	<footer id="footer" th:replace="common::common_body_footer"> </footer>
+	<!--===================================================-->
+	<!-- END FOOTER -->
+
+	<!-- SCROLL PAGE BUTTON -->
+	<!--===================================================-->
+	<button th:replace="common::common_body_topbutton"></button>
+	<!--===================================================-->
+	<th:block th:replace="common::common_container_end" />
+	<th:block th:replace="common::common_head_basejs" />
+</body>
+
+</html>
