@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.alex.potenza.comon.BaseEntity;
+import com.alex.potenza.entity.core.sys.Classroom;
 import com.alex.potenza.entity.core.sys.Employee;
 
 import lombok.Getter;
@@ -67,6 +68,18 @@ public class TeachingSchedule extends BaseEntity implements Serializable{
 	 * 状态：1：草稿  2：审核中   3：审核成功   4：审核失败  5：未开始  6：进行中 7：已结束
 	 */
 	private Integer stutas;
+	
+	
+	/**
+	 * 教室号
+	 */
+	private String classroomCode;
+	
+	
+	/**
+	 * 教室
+	 */
+	private Classroom classroom;
 	
 	/**
 	 * 学生

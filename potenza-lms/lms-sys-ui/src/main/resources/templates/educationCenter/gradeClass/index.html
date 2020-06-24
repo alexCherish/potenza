@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="common::common_head_one" />
+<title>教务中心-班级管理</title>
+<th:block th:replace="common::common_head_basecss" />
+</head>
+
+<body>
+	<!--NAVBAR-->
+	<th:block th:replace="common::common_container_header" />
+	<!--NAVBAR-->
+	<header th:replace="common::common_body_navbar"></header>
+	<!--END NAVBAR-->
+	<div class="boxed" id="app">
+		<!--CONTENT CONTAINER-->
+		<!--===================================================-->
+		<div id="content-container">
+			<div id="page-head">
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="demo-pli-home"></i></a></li>
+					<li><a href="#">教务中心</a></li>
+					<li class="active">学生管理</li>
+				</ol>
+			</div>
+			<!--Page content-->
+			<!--===================================================-->
+			<div id="page-content" style="padding-top: 2px;">
+				<div class="row">
+					<div class="panel" id="test">
+						<!--Data Table-->
+						<!--===================================================-->
+						<div class="panel-body">
+							<div class="form-inline">
+								<div class="row">
+									<div class="col-sm-6 table-toolbar-left">
+										<button id="demo-btn-addrow" class="btn btn-purple">
+											<i class="demo-pli-add"></i> Add
+										</button>
+										<div class="btn-group">
+											<button class="btn btn-default">
+												<i class="demo-pli-exclamation"></i>
+											</button>
+											<button class="btn btn-default">
+												<i class="demo-pli-recycling"></i>
+											</button>
+										</div>
+									</div>
+									<div class="col-sm-6 table-toolbar-right">
+										<div class="form-group">
+											<input type="text" autocomplete="off" class="form-control"
+												placeholder="输入班级名称" id="demo-input-search2">
+										</div>
+										<div class="btn-group">
+											<button class="btn btn-default">
+												<i class="demo-pli-printer"></i>
+											</button>
+											<div class="panel-control">
+												<button class="btn btn-default" data-panel="fullscreen">
+													<i class="icon-max demo-psi-maximize-3"></i> <i
+														class="icon-min demo-psi-minimize-3"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<el-table :data="gradeClasses" border> <el-table-column
+								prop="name" label="班级"> </el-table-column> <el-table-column
+								label="创建时间"> <template slot-scope="scope">
+							<i class="el-icon-time"></i> <span style="margin-left: 10px">{{
+								scope.row.createTime }}</span> </template> </el-table-column> <el-table-column label="是否启用">
+							<template slot-scope="scope"> <el-switch
+								v-model="enabled" active-color="#13ce66" active-value="1"
+								inactive-value="2" @change="enabledClass"> </el-switch> </template> </el-table-column> <el-table-column
+								label="操作" width="200"> <template
+								slot-scope="scope"> <el-button size="mini"
+								@click="handleEdit(scope.$index, scope.row)" data-target="#demo-modal-wo-anim" data-toggle="modal">编辑</el-button> <el-button
+								size="mini" type="danger"
+								@click="handleDelete(scope.$index, scope.row)">删除</el-button> </template> </el-table-column>
+							</el-table>
+						</div>
+						<div class="panel-footer table-toolbar-right">
+							<el-pagination :current-page="1"
+								:page-sizes="[100, 200, 300, 400]" :page-size="100"
+								layout="total, sizes, prev, pager, next, jumper" :total="400">
+							</el-pagination>
+						</div>
+						<!--End Data Table-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===============添加修改弹出框=================-->
+		<!--===================================================-->
+		<div class="modal" id="demo-modal-wo-anim" role="dialog" tabindex="-1"  data-backdrop="static"
+			aria-labelledby="demo-default-modal" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<i class="pci-cross pci-circle"></i>
+						</button>
+						<h4 class="modal-title">Modal Heading</h4>
+					</div>
+					<!--Modal body-->
+					<div class="modal-body">
+						<p class="text-semibold text-main">Bootstrap Modal Vertical
+							Alignment Center</p>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+							sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+							aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+							exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+							commodo consequat.</p>
+						<br>
+						<p class="text-semibold text-main">Popover in a modal</p>
+						<p>
+							This
+							<button
+								class="btn btn-sm btn-warning demo-modal-popover add-popover"
+								data-toggle="popover" data-trigger="focus"
+								data-content="And here's some amazing content. It's very engaging. right?"
+								data-original-title="Popover Title">button</button>
+							should trigger a popover on click.
+						</p>
+						<br>
+						<p class="text-semibold text-main">Tooltips in a modal</p>
+						<p>
+							<a class="btn-link text-bold add-tooltip" href="#"
+								data-original-title="Tooltip">This link</a> and <a
+								class="btn-link text-bold add-tooltip" href="#"
+								data-original-title="Tooltip">that link</a> should have tooltips
+							on hover.
+						</p>
+					</div>
+					<!--Modal footer-->
+					<div class="modal-footer">
+						<button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+						<button class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--===================================================-->
+		<aside th:replace="common::common_body_aside"></aside>
+		<nav id="mainnav-container" th:replace="common::common_body_mainnav">
+		</nav>
+		<!--END MAIN NAVIGATION-->
+	</div>
+	<footer id="footer" th:replace="common::common_body_footer"> </footer>
+	<button th:replace="common::common_body_topbutton"></button>
+	<th:block th:replace="common::common_container_end" />
+	<th:block th:replace="common::common_head_basejs" />
+
+	<script>
+		var app = new Vue({
+			el : "#app",
+			data : {
+				gradeClasses : [ {
+					enabled : 1,
+					name : "1770A",
+					createTime : "2020-2-12"
+				} ],
+				enabled : 1
+			},
+			methods : {
+				enabledClass : function(value) {
+					alert(value);
+				}
+			}
+		});
+	</script>
+
+</body>
+
+</html>
